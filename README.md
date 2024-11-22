@@ -1,17 +1,10 @@
-# Scalable and Robust Transformer Decoders for Interpretable Image Classification with Foundation Models
+# ComFe: Interpretable Image Classifiers With Foundation Models
 
 <p float="center">
-  <img src="imgs/True_72_3709_raw.png" width="150" />
+  <img src="imgs/True_72_3709_raw" width="150" />
   <img src="imgs/True_72_3709_class.png" width="150" /> 
+  <img src="imgs/True_72_3709_class_conf.png" width="150" /> 
   <img src="imgs/True_72_3709_prototypes.png" width="150" />
-</p>
-
-<p float="center">
-  <img src="imgs/True_72_3709_proto_match_True_72_0.png" width="150" />
-  <img src="imgs/True_72_3709_proto_match_True_72_1.png" width="150" /> 
-  <img src="imgs/True_72_3709_proto_match_True_72_2.png" width="150" />
-  <img src="imgs/True_72_3709_proto_match_True_72_3.png" width="150" />
-  <img src="imgs/True_72_3709_proto_match_True_72_4.png" width="150" />
 </p>
 
 ## Installation
