@@ -1,0 +1,18 @@
+
+_partial_: true
+_target_: goo.augmentations.paws_segmentation_v2.DataAugmentationPAWS
+global_crops_scale: [0.5, 1.0]
+local_crops_scale: [0.05, 0.14]
+global_crops_number: 2
+local_crops_number: 0
+global_crop_size: 224
+local_crop_size: 96
+color_distortion_s : 0.5
+blur_prob: 0.0
+color_distortion_grayscale: True
+color_distortion_solarize: False
+color_distortion_equalize: False
+normalize:
+  mean: [0.485, 0.456, 0.406]
+  std: [0.229, 0.224, 0.225]
+masks: false

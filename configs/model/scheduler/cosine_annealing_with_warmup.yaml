@@ -1,0 +1,11 @@
+scheduler:
+  _target_: goo.scheduler.paws_cosine_annealing_with_warmup.WarmupCosineSchedule
+  _partial_: true
+  warmup_steps: 10
+  start_lr: 5.0e-5
+  ref_lr: 5.0e-4
+  final_lr: 5.0e-6
+  T_max: 0.80
+
+scheduler_lightning:
+  interval: step

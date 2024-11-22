@@ -1,0 +1,7 @@
+_target_: goo.datasets.torchvision_lightning.TorchvisionDataModule
+data_dir: datasets
+TorchvisionDataset:
+  _target_: goo.datasets.torchvision.torchvision_flowers102.MyFlowers102
+  _partial_: True
+split_style: 'trainvaltest'
+

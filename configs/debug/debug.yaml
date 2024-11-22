@@ -1,0 +1,35 @@
+# @package _global_
+
+extras:
+  ignore_warnings: False
+  enforce_tags: False
+
+# hydra:
+#   job_logging:
+#     root:
+#       level: DEBUG
+
+model:
+  trainer:
+    accelerator: gpu # debuggers don't like gpus
+    devices: 1 # debuggers don't like multiprocessing
+    strategy: 'auto'
+    sync_batchnorm: True
+    detect_anomaly: true # raise exception if NaN or +/-inf is detected in any tensor
+    max_epochs: 10
+    limit_train_batches: 1
+    limit_val_batches: 1
+    limit_test_batches: 1
+    limit_predict_batches: 1
+    benchmark: False
+    log_every_n_steps: 1
+
+  dataloaders:
+    batch_size: 4
+    num_workers: 0 # debuggers don't like multiprocessing
+    pin_memory: False # disable gpu memory pin
+
+  callbacks:
+    TQDMP_progress_bar:
+      _target_: lightning.pytorch.callbacks.TQDMProgressBar
+      refresh_rate: 1

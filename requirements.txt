@@ -1,0 +1,37 @@
+# local
+# conda create --name mysemiv4_21 python=3.9
+# conda install pip
+# pip3 install -r requirements.txt
+
+torch==2.1.0
+torchvision==0.16
+lightning==2.1
+torchmetrics==1.2
+
+timm==0.9
+faiss-gpu==1.7.2
+
+lightly==1.3.3
+tensorboard==2.15
+
+hydra-core
+hydra-colorlog
+
+scikit-learn
+pytest
+rich
+pyrootutils
+PyYAML
+pytz
+overrides
+scipy
+matplotlib
+virtualenv
+
+pandas
+
+# https://rapids.ai/#quick-start
+# pip install cuml-cu11 --extra-index-url=https://pypi.nvidia.com
+--extra-index-url=https://pypi.nvidia.com
+cuml-cu11==23.4.1
+xFormers==0.0.22.post4

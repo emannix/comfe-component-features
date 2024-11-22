@@ -1,0 +1,70 @@
+# @package _global_
+# python3 main.py +R=simclr +model/dataset=cifar10 +model/networks=simclrv2_resnet18sk0_cifar10stem +debug=mine
+defaults:
+  - /model/augmentations@model.augmentations.aug_labelled: 224px_labelled_normed
+  - /model/augmentations@model.augmentations.aug_validation: center_stretch_224px
+  - /model/augmentations@model.augmentations.aug_predict: center_stretch_224px
+  - _self_
+
+train: False
+test: False
+predict: True
+
+task_name: "comfe-view"
+
+model:
+  ckpt_path: ../output/local/comfe-run_1/checkpoints/last.ckpt
+
+  methods:
+    plot_closest_training_data: True
+    plot_class_prototypes: True
+    plot_class_prototypes_n_exemplars: 3
+    plot_class_prototype_associations: True
+
+  trainer:
+    max_epochs: 50
+    check_val_every_n_epoch: 1
+    benchmark: True
+    precision: 32
+    gradient_clip_val: 0.01
+    gradient_clip_algorithm: "norm"
+
+  dataloaders:
+    batch_size: 64
+    batch_size_unlabelled_scalar: 1.0
+    pin_memory: False
+    labelled_indices_csv: null
+    random_indices_params: null
+    predict_dataloader_default: 'data_test'
+    shuffle_predict_dataloader: True
+
+  networks:
+    networks:
+      base_clustering:
+        _target_: goo.networks.clustering.comfe_head.ComFeHead
+        _partial_: True
+        n_img_prototypes: 5
+        num_classes: 102
+        num_classes_prototypes: 306
+        background_prototypes: 306
+        temp_pred: 0.1
+        temp_pred2: 0.02
+        temp_contrastive: 0.02
+        patches: 16
+        background_class: True
+        use_decoder_posenc: True
+        loss_pz: True 
+        loss_pyz: True 
+        loss_pyp: True 
+        loss_patch_consistency: True 
+        loss_image_contrast: True 
+        loss_class_contrast: False 
+        transformer_layers: 2
+        transformer_heads: 8
+        transformer_dropout: 0.1
+        transformer_attnpdropout: 0.0
+        use_xformers: False
+        label_smoothing: 0.1
+        backbone_dim: 384
+        transformer_input_dim: 384
+

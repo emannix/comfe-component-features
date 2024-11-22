@@ -1,0 +1,27 @@
+# @package _global_
+defaults:
+  - /model/callbacks: default.yaml
+  - /model/custom_callbacks: 
+    - save_predictions_eval.yaml
+  - /model/dataloaders: sequential.yaml
+  - /model/logger: tensorboard.yaml
+  - /model/loss: crossentropy_weighted.yaml
+  - /model/optimizer: AdamW.yaml
+  - /model/scheduler: cosine_annealing_with_warmup.yaml
+  - /model/trainer: default.yaml
+  - /model/methods: comfe.yaml 
+  - /R/experiment: ${R}_${model/networks}_${model/dataset}
+  - _self_
+    
+model:
+
+  optimizer:
+    parameter_groups:
+      param_opt_exclude: ['backbone']
+
+  callbacks:
+    model_checkpoint:
+      dirpath: ${paths.output_dir}/checkpoints
+      monitor: "val/accuracy"
+      mode: "max"
+

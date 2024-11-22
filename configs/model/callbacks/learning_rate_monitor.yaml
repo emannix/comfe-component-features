@@ -1,0 +1,6 @@
+
+learning_rate_monitor:
+  # _target_: lightning.pytorch.callbacks.LearningRateMonitor
+  _target_: goo.callbacks.learning_rate_monitor.CustomLearningRateMonitor
+  logging_interval: step
+  log_momentum: True

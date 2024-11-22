@@ -1,0 +1,4 @@
+
+TQDMP_progress_bar:
+  _target_: lightning.pytorch.callbacks.TQDMProgressBar
+  refresh_rate: 50

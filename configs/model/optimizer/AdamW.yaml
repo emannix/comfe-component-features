@@ -1,0 +1,15 @@
+
+optimizer:
+  _target_: goo.optimizer.adam.PytorchAdamW
+  _partial_: true
+  optimizer: null
+  lr: 5.0e-4 
+  weight_decay: 0.05
+  betas: [0.9, 0.999]
+
+parameter_groups:
+  _target_: goo.optimizer.parameter_groups.set_parameter_groups
+  _partial_: true
+  param_wd_exclude: ['bias', 'bn']
+  param_lars_exclude: ['bias', 'bn']
+ 

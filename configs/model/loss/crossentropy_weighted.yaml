@@ -1,0 +1,4 @@
+loss:
+  _target_: goo.loss.cross_entropy_weighted.CrossEntropyWeighted
+  _partial_: true
+  beta: 0.9999

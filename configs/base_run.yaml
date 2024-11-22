@@ -1,0 +1,10 @@
+# python3 main.py  +R/debug=mine.yaml
+
+defaults:
+  - base.yaml
+  - _self_
+  - R: byol.yaml
+  - model/networks: BYOL_resnet18
+  - model/dataset: cifar10
+
+  - debug: null

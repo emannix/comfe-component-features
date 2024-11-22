@@ -1,0 +1,25 @@
+# python3 main.py  +R/debug=mine.yaml
+
+defaults:
+  - extras: default.yaml
+  - hydra: default.yaml
+  - paths: default.yaml
+  - _self_
+
+# searchpath:
+hydra:
+  searchpath:
+    - ../overrides/
+    - ../
+
+task_name: "base"
+
+train: True
+test: True
+predict: True
+ckpt_use: 'best'
+
+compile: False
+model:
+  ckpt_path: null
+seed: 0

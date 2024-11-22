@@ -1,0 +1,7 @@
+_target_: goo.datasets.torchvision_lightning.TorchvisionDataModule
+data_dir: datasets
+TorchvisionDataset:
+  _target_: goo.datasets.torchvision.torchvision_oxfordpets.MyOxfordIIITPet
+  _partial_: True
+split_style: 'trainvalnovaltest'
+

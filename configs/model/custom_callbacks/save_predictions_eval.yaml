@@ -1,0 +1,6 @@
+
+save_predictions:
+  _target_: goo.callbacks.save_predictions.SavePredictions
+  metrics_calculate: ['accuracy', 'mean_class_accuracy', 'aucroc', 'average_precision']
+  calculate_point: epoch
+  calculate_stages: ['train', 'val', 'test']

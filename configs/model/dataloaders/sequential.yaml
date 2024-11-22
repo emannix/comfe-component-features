@@ -1,0 +1,12 @@
+
+train_labelled_batch_sampler: null
+train_labelled_sampler: null
+train_unlabelled_batch_sampler: null
+train_unlabelled_sampler: null
+val_batch_sampler: null
+val_sampler: null
+num_workers: 8
+batch_size: 1024
+pin_memory: True
+drop_last: True
+shuffle: True
