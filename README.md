@@ -1,4 +1,4 @@
-# ComFe: Interpretable Image Classifiers With Foundation Models
+# ComFe: An Interpretable Head for Vision Transformers
 
 <p float="center">
   <img src="imgs/True_72_3709_raw.png" width="150" />
