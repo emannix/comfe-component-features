@@ -1,5 +1,7 @@
 # ComFe: An Interpretable Head for Vision Transformers
 
+[arxiv paper](https://arxiv.org/abs/2403.04125) - [TMLR paper](https://openreview.net/forum?id=cI4wrDYFqE)
+
 <p float="center">
   <img src="imgs/True_72_3709_raw.png" width="150" />
   <img src="imgs/True_72_3709_class.png" width="150" /> 
@@ -9,8 +11,23 @@
 
 ## Installation
 
-Create a new Python 3.9 environment and install the packages in the requirements.txt file. 
+Using uv, install following [this guide](https://github.com/astral-sh/uv).
 
+First, install the correct python environment
+
+    uv python install 3.10.18
+    uv python pin 3.10.18
+
+Then create the virtual environment
+
+    deactivate
+    uv venv --python 3.10.18
+    source .venv/bin/activate
+    uv pip install -r pyproject.toml
+
+and then to activate the environment run
+
+    source .venv/bin/activate
 
 ## Fitting ComFe
 

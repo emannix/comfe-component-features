@@ -99,7 +99,7 @@ class GaussianBlur(object):
         if self.align_transform:
             if torch.bernoulli(torch.tensor(self.prob)) == 0:
                 return img
-            radius = self.radius_min + torch.rand(1) * (self.radius_max - self.radius_min)
+            radius = int(self.radius_min + torch.rand(1) * (self.radius_max - self.radius_min))
             for i in range(len(img)):
                 img_pil = to_pil_image(img[i])
                 img_pil.filter(ImageFilter.GaussianBlur(radius=radius))
@@ -108,7 +108,7 @@ class GaussianBlur(object):
             for i in range(len(img)):
                 if torch.bernoulli(torch.tensor(self.prob)) == 0:
                     pass
-                radius = self.radius_min + torch.rand(1) * (self.radius_max - self.radius_min)
+                radius = int(self.radius_min + torch.rand(1) * (self.radius_max - self.radius_min))
                 img_pil = to_pil_image(img[i])
                 img_pil.filter(ImageFilter.GaussianBlur(radius=radius))
                 img[i] = to_image(img_pil)
